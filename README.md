@@ -3,7 +3,7 @@ Scheduled tasks that rebinds winrm and rdp processes to newly refreshed certific
 
 To implement, search&replace "Intern-ServerCert" into whatever you Certificate Template Name is. Setting up certificate template and autoenrolling is out of scope for this git.
 
-Scripts do the work, and are triggered by a scheduled task. The task is created through a powershell-scriptlet that adds all nessecary Trigger Variables:
+Scripts do the work, and are triggered by a scheduled task. The task is created through running a powershell-scriptlet once:
 
 ```
 New-CertificateNotificationTask -PSScript C:\Scripts\SetWinRMCert.ps1 -Channel System -Type Replace -Name "Reconfigure WinRM certificate when certificate is renewed"
